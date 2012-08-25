@@ -1,0 +1,16 @@
+<app>
+  <id>bbcnews</id>
+  <name>BBC News</name>
+  <version>1.0</version>
+  <description>Live News from the BBC</description>
+  <thumb></thumb>
+  <repository>http://dir.boxee.tv/apps</repository>
+  <media>video</media>
+  <copyright>BBC News</copyright>
+  <email>donotreply@invalid</email>
+  <type>skin</type>
+  <startWindow>start</startWindow>
+  <platform>all</platform>
+  <minversion>0.9.22</minversion>
+  <test-app>true</test-app>
+</app>
