@@ -1,6 +1,8 @@
 import mc
 from urllib import quote_plus, urlencode
 
+# stream_url = 'http://akamedia2.lsops.net/live/bbcworld1_en_high.sdp/playlist.m3u8'
+# stream_url = 'http://akamedia2.lsops.net/live/bbcparli_en_high.sdp/playlist.m3u8'
 stream_url = 'http://akamedia2.lsops.net/live/bbcnews_en_high.sdp/playlist.m3u8'
 
 playlist_url = "playlist://%s?live=1&quality=A" % quote_plus(stream_url)
