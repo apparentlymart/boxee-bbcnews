@@ -1,10 +1,7 @@
 import mc
 from urllib import quote_plus, urlencode
 
-# stream_url = 'http://akamedia2.lsops.net/live/bbcworld1_en_high.sdp/playlist.m3u8'
-# stream_url = 'http://akamedia2.lsops.net/live/bbcparli_en_high.sdp/playlist.m3u8'
-# stream_url = 'http://akamedia2.lsops.net/live/skynewsi_en_high.sdp/playlist.m3u8'
-stream_url = 'http://akamedia2.lsops.net/live/bbcnews_en_high.sdp/playlist.m3u8'
+stream_url = '__STREAM_URL__'
 
 playlist_url = "playlist://%s?live=1&quality=A" % quote_plus(stream_url)
 
@@ -13,5 +10,3 @@ item.SetPath(playlist_url)
 item.SetLabel('BBC News')
 item.SetContentType = 'application/vnd.apple.mpegurl'
 mc.GetPlayer().Play(item)
- 
- 

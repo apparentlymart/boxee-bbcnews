@@ -1,4 +1,2 @@
-*.zip
-*.zip.xml
-bbcnews/*
-uk.me.mart.bbcnews/*
+target/*
+work/*

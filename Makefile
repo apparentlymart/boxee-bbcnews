@@ -1,20 +1,18 @@
 
-official: bbcnews-1.0.zip
+REPO_ID = uk.me.mart
+VERSION = 1.1
 
-local: uk.me.mart.bbcnews-1.0.zip
+all: target/$(REPO_ID).bbcnews-$(VERSION).zip target/$(REPO_ID).bbcparliament-$(VERSION).zip target/$(REPO_ID).bbcworldnews-$(VERSION).zip target/$(REPO_ID).skynews-$(VERSION).zip
 
-bbcnews-1.0.zip: clean descriptor.xml start.py
-	rm -rf bbcnews || echo "didn't remove 'bbcnews' build dir"
-	mkdir bbcnews
-	cp descriptor.xml bbcnews
-	cp start.py bbcnews
-	rm bbcnews-1.0.zip
-	zip -r bbcnews-1.0.zip bbcnews/
+target/$(REPO_ID).bbcnews-$(VERSION).zip: descriptor.xml start.py genapp.pl
+	perl genapp.pl bbcnews
 
-uk.me.mart.bbcnews-1.0.zip: clean descriptor.xml start.py
-	rm -rf uk.me.mart.bbcnews || echo "didn't remove 'uk.me.mart.bbcnews' build dir"
-	mkdir uk.me.mart.bbcnews
-	sed 's/<id>bbcnews/<id>uk.me.mart.bbcnews/' descriptor.xml >uk.me.mart.bbcnews/descriptor.xml
-	cp start.py uk.me.mart.bbcnews
-	rm uk.me.mart.bbcnews-1.0.zip
-	zip -r uk.me.mart.bbcnews-1.0.zip uk.me.mart.bbcnews/
+target/$(REPO_ID).bbcworldnews-$(VERSION).zip: descriptor.xml start.py genapp.pl
+	perl genapp.pl bbcworldnews
+
+target/$(REPO_ID).bbcparliament-$(VERSION).zip: descriptor.xml start.py genapp.pl
+	perl genapp.pl bbcparliament
+
+target/$(REPO_ID).skynews-$(VERSION).zip: descriptor.xml start.py genapp.pl
+	perl genapp.pl skynews
+
